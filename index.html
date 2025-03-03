@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress</title>
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Progress</h1>
+    </header>
+    <main>
+      <!-- progress  circle -->
+      <div class="progress">
+        <svg
+          class="progress__circle"
+          width="150"
+          height="150"
+          viewBox="0 0 100 100"
+        >
+          <!-- background -->
+          <circle class="progress__circle-bg" cx="50" cy="50" r="40"></circle>
+          <!-- dynamic progress -->
+          <circle
+            class="progress__circle-fill"
+            cx="50"
+            cy="50"
+            r="40"
+            stroke-dasharray="251.2"
+            stroke-dashoffset="251.2"
+          ></circle>
+        </svg>
+      </div>
+
+      <!-- controls -->
+      <div class="controls">
+        <label for="progressValue" class="controls__label">
+          <div class="controls__wrapper">
+            <input
+              id="progressValue"
+              type="number"
+              min="0"
+              max="100"
+              value="50"
+              class="controls__value-input"
+            />
+          </div>
+          <p class="controls__text">Value</p>
+        </label>
+
+        <!-- animate toggle -->
+        <label for="animateToggle" class="controls__label">
+          <div class="controls__wrapper">
+            <input
+              type="checkbox"
+              id="animateToggle"
+              class="controls__toggle-input"
+            />
+            <span class="controls__toggle-slider"></span>
+          </div>
+          <p class="controls__text">Animate</p>
+        </label>
+
+        <!-- hide toggle -->
+        <label for="hideToggle" class="controls__label">
+          <div class="controls__wrapper">
+            <input
+              type="checkbox"
+              id="hideToggle"
+              class="controls__toggle-input"
+            />
+            <span class="controls__toggle-slider"></span>
+          </div>
+          <p class="controls__text">Hide</p>
+        </label>
+      </div>
+    </main>
+  </body>
+</html>

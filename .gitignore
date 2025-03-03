@@ -1,0 +1,15 @@
+
+node_modules/
+
+
+styles.css
+styles.css.map
+
+.sass-cache/
+
+
+.DS_Store
+.vscode/
+
+
+package-lock.json
