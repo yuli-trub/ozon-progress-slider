@@ -1,47 +1,24 @@
-// colours
-$primary-color: #0856e2;
-$secondary-color: #eaf0f6ea;
-$background-color: white;
-$toggle-active: #0856e2;
-$toggle-inactive: #ccc;
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/fonts";
 
-// sizes
-$border-radius: 8px;
-$circle-size: 8rem;
-$toggle-width: 3rem;
-$toggle-height: 1.5rem;
-$slider-size: 1.25rem;
-
-// font
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
-
-// responsiveness media queries
-$mobile: 320px;
-$tablet: 568px;
-$desktop: 1024px;
-
-@mixin respond($breakpoint) {
-  @if $breakpoint == mobile {
-    @media (max-width: $mobile) {
-      @content;
-    }
-  } @else if $breakpoint == tablet {
-    @media (max-width: $tablet) {
-      @content;
-    }
-  } @else if $breakpoint == desktop {
-    @media (min-width: $desktop) {
-      @content;
-    }
+// animation
+@keyframes rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
   }
 }
 
-// flexbox mixin
-@mixin flex($direction: row, $justify: center, $align: center) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: $align;
-  justify-content: $justify;
+.animated {
+  animation: rotate 2s linear infinite;
+}
+
+.animated--stopping {
+  animation: none;
+  transition: transform 2s ease-out;
 }
 
 body {
@@ -71,6 +48,14 @@ body {
 
   &__circle {
     transform: rotate(-90deg);
+
+    // hide functionality styling
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
   &__circle-bg {
     fill: none;

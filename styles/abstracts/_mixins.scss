@@ -1,0 +1,28 @@
+// responsiveness media queries
+$mobile: 320px;
+$tablet: 568px;
+$desktop: 1024px;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+// flexbox mixin
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
